@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Shantell+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins';
+    overflow-x: hidden;
+}
+
+/*navbar*/
+nav {
+    display: flex;
+    background-color: rgb(248, 178, 190);
+    color: rgb(217, 114, 131);
+    padding: 28px 0;
+    width: 100%;
+    justify-content: space-around;
+    margin-inline: auto;
+    box-shadow: 0px 3px 7px 0px  whitesmoke;
+    position: fixed;
+}
+nav ul {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: rgb(217, 114, 131) ;
+    text-decoration: none;
+    font-size: 1em;
+}
+nav ul li a:hover, a.active  {
+    color: white;
+    border-bottom: 1px solid whitesmoke;
+    transition: .5s;
+}
+nav .logo{
+    font-family: 'Shantell Sans';
+}
+nav .logo a{
+    color:rgb(217, 114, 131) ;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+nav .logo a:hover{
+    color: whitesmoke;
+    transition: .5s;
+}
+
+.garis{
+    display: none;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+  
+.garis span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: rgb(217, 114, 131);
+    border-radius: 5px;
+}
+
+ /*content*/ 
+main {
+    padding: 20px;
+    display: flex;
+    gap: 1.5rem;
+}
+#content h2{
+    margin-top: 100px;
+    text-align: center;
+}
+.box {
+    box-shadow: 0 2px 6px 2px rgb(244, 188, 197);
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}  
+#content .box  img{
+    width: 300px;
+    margin-top: 10px;
+    margin-right: 10px;
+    float: left; 
+}
+#content .box  p{
+    text-indent: 1em;
+    text-align: justify;
+    font-weight: 100;
+}
+.box-taman {
+    box-shadow: 0 2px 6px 2px rgb(244, 188, 197);
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+  
+#content .box-taman  img{
+    width: 120px;
+    margin-bottom: 20px;
+    margin-left: 45px;
+    float: right;
+}
+#content .box-taman h3{
+    padding: 1rem 0;
+}
+#content .box-taman h3:hover{
+    color:rgb(244, 188, 197);
+}
+#content .box-taman  p{
+    text-indent: 1em;
+    text-align: justify;
+    font-weight: 100;
+}
+
+/*aside*/
+.box-profile{
+    box-shadow: 0 2px 8px 2px rgb(244, 188, 197);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 160px;
+    width: 900px;
+    height: 420px;
+    float: left;
+    box-sizing: border-box;
+}
+.box-profile img{
+    width: 200px;
+    margin-left: 30px;
+    margin-right: 10px;
+    margin-top: 30px;
+    border-radius: 50%;
+} 
+.box-profile table{
+   text-align: left;
+   margin-top: 30px;
+   font-size: 15px;
+}
+
+/* Footer */
+footer{
+    background-color: rgb(248, 178, 190);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+footer .sosial{
+    padding: 1rem 0;
+}
+footer .sosial a{
+    color: black;
+    margin: 1rem;
+}
+footer .sosial h4{
+    color: black;
+    margin: .5rem;
+}
+footer .sosial a:hover{
+    color: whitesmoke;
+    transition: .5s;
+}
+footer .credit{
+    text-align: center;
+}
+
+
+/* Media query */
+@media screen and (max-width: 1200px) {
+    nav {
+        display: 50%;
+    }
+
+    main {
+        flex-flow: column nowrap;
+    }
+   
+    main #content {
+        align-self: center;
+        width: 100%;
+        padding: 0;
+    }
+    aside {
+        max-width: 300px;
+        align-self: center;
+    }
+}
+  
+
+@media screen and (max-width: 768px) {
+    nav ul{
+        width: 50%;
+    }   
+}
+
+@media screen and (max-width: 696px) {
+    .garis{
+        display: flex;
+    }
+    nav ul{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        font-size: 20px;
+        width: 50%;
+        height: 100vh;
+        right: 0;
+        top: 0;
+        background-color: rgb(248, 178, 190);
+        justify-content: space-evenly;
+        z-index: -1;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 1s;
+    }
+    nav ul.active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: 0.5s;
+    }   
+}
+
